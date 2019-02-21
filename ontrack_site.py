@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, send_file,
 
 import io
 import matplotlib.pyplot as plt
-from user import User
 
 app = Flask(__name__)
 app.secret_key = 'very secret string'
@@ -47,6 +46,7 @@ def register_success(user, pw, email):
     return user == 'Søren'
 
 def login_success(user, pw):
+    #TODO: Brug databasen i stedet.
     return user == 'Søren'
 
 def my_render(template, **kwargs):
